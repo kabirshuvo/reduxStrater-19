@@ -4,3 +4,14 @@
 
 
 
+# <h1>workFlow</h1>
+* react-router-dom, tailwind, installed.
+
+#### Commands and codes...
+
+
+
+<p>npm install @headlessui/react</p>
+
+<p>npm install react-icons</p>
+<p>npm install @heroicons/react</p>
