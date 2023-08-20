@@ -107,14 +107,14 @@ export default function PricingSection() {
                   <div>
                     <button
                       onClick={decreaseQuantity}
-                      className="text-indigo-600 py-2 px-4 me-2"
+                      className="text-white shadow-sm py-2 px-4 me-1  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     >
                       -
                     </button>
-                    <span className="text-indigo-600  bg-red-600 py-2 px-4">{quantity}</span>
+                    <button className="text-white shadow-sm py-2 px-4  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">{quantity}</button>
                     <button
                       onClick={increaseQuantity}
-                      className="text-indigo-600 py-2 px-4 ms-2"
+                      className="text-white shadow-sm py-2 px-4 ms-1  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     >
                       +
                     </button>
