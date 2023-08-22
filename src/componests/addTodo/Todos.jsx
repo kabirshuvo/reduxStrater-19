@@ -1,11 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
 import { removeTodo } from "../../app/features/todo/todoSlice";
 
 const Todos = () => {
-  const todos = useSelector((state) => state.todos);
 
+  const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
   console.log(todos);
 

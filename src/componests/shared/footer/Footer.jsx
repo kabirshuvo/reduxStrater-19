@@ -1,4 +1,5 @@
 import React from 'react';
+import reduxToolkitLogo from '../../../assets/redux-toolkit-1400.webp'
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         <div className="w-full sm:w-1/2 md:w-1/5 mb-4 sm:mb-0">
           {/* Logo and Address */}
           <div className="text-center sm:text-left">
-            <img src="logo.png" alt="Logo" className="w-16 h-16 mx-auto mb-4" />
+            <img src={reduxToolkitLogo} alt="redux toolkit logo Logo" className="w-full -ms-16 h-16 mx-auto rounded mb-4" />
             <p>123 Main Street<br />City, State, Zip</p>
           </div>
         </div>
@@ -38,7 +39,7 @@ const Footer = () => {
           {/* Subscription Form */}
           <div className="text-center sm:text-right">
             <input type="email" placeholder="Enter your email" className="w-full p-2 mb-2" />
-            <button className="bg-orange-500 text-white px-4 py-2">Subscribe</button>
+            <button className="bg-purple-700 rounded text-white px-4 py-2">Subscribe</button>
           </div>
         </div>
         <div className="hidden md:block md:w-1/5"></div>

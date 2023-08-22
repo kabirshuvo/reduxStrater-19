@@ -1,5 +1,15 @@
 import { CheckIcon } from "@heroicons/react/20/solid";
+
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment } from '../../app/features/counter/counterSlice'
+
 import React, { useState } from "react";
+
+
+
+
+
+
 const includedFeatures = [
   "Private forum access",
   "Member resources",
@@ -8,6 +18,16 @@ const includedFeatures = [
 ];
 
 export default function PricingSection() {
+
+
+  const count = useSelector((state) => state.counter.count)
+  const dispatch = useDispatch()
+
+
+
+
+
+
   const [quantity, setQuantity] = useState(1);
   const [showAddToCart, setShowAddToCart] = useState(true);
   const [showCancel, setShowCancel] = useState(false);
@@ -25,11 +45,13 @@ export default function PricingSection() {
   const addToCart = () => {
     setShowAddToCart(false);
     setShowCancel(true);
+    dispatch(increment())
   };
 
   const cancel = () => {
     setShowAddToCart(true);
     setShowCancel(false);
+    dispatch(decrement())
   };
 
   return (
@@ -106,14 +128,21 @@ export default function PricingSection() {
                 <div className={`mt-10 flex justify-center items-center gap-4 ${showCancel ? "block" : "hidden"}`}>
                   <div>
                     <button
-                      onClick={decreaseQuantity}
+                      // onClick={decreaseQuantity}
+                      onClick={() => dispatch(decrement())}
                       className="text-white shadow-sm py-2 px-4 me-1  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     >
                       -
                     </button>
-                    <button className="text-white shadow-sm py-2 px-4  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">{quantity}</button>
+                    <button className="text-white shadow-sm py-2 px-4  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+                      
+                      {/* {quantity} */}
+                      {count}
+                    
+                    </button>
                     <button
-                      onClick={increaseQuantity}
+                      // onClick={increaseQuantity}
+                      onClick={() => dispatch(increment())}
                       className="text-white shadow-sm py-2 px-4 ms-1  hover:bg-zinc-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     >
                       +
